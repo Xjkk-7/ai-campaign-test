@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Campaign Test - OmnifyLabs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: #333;
+            margin: 0;
+        }
+        .header p {
+            color: #666;
+            margin: 10px 0;
+        }
+        .test-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #007bff;
+        }
+        .test-info h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
+        .sale-banner {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .product {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .product:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .product img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+        .product h4 {
+            margin: 10px 0 5px 0;
+            color: #333;
+        }
+        .product .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #28a745;
+        }
+        .product .original-price {
+            text-decoration: line-through;
+            color: #999;
+            margin-right: 10px;
+        }
+        .cta-button {
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+            transition: background 0.2s;
+        }
+        .cta-button:hover {
+            background: #218838;
+        }
+        .log-section {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border: 1px solid #dee2e6;
+        }
+        .log-section h3 {
+            margin-top: 0;
+            color: #495057;
+        }
+        #log {
+            background: #000;
+            color: #00ff00;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            max-height: 300px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .status.success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .status.error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .status.info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 AI Campaign Test</h1>
+            <p>Testing AI-powered campaigns on external hosting</p>
+            <p><strong>Server:</strong> 129.212.164.115:3000</p>
+        </div>
+
+        <div class="test-info">
+            <h3>🧪 What This Tests</h3>
+            <ul>
+                <li><strong>CORS Resolution:</strong> External hosting bypasses localhost restrictions</li>
+                <li><strong>AI Campaign Delivery:</strong> Should show AI-generated campaign messages</li>
+                <li><strong>Widget Integration:</strong> Tests full widget-to-server communication</li>
+                <li><strong>Real Environment:</strong> Simulates actual production usage</li>
+            </ul>
+        </div>
+
+        <div class="sale-banner">
+            🎉 EXCLUSIVE 20% DISCOUNT SALE - LIMITED TIME! 🎉
+        </div>
+
+        <div class="products">
+            <div class="product">
+                <div style="width: 100%; height: 150px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; border-radius: 4px; color: #999;">
+                    📱 Product Image
+                </div>
+                <h4>Premium Widget Set</h4>
+                <div class="price">
+                    <span class="original-price">$99.99</span>
+                    <span>$79.99</span>
+                </div>
+                <button class="cta-button">Add to Cart</button>
+            </div>
+            <div class="product">
+                <div style="width: 100%; height: 150px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; border-radius: 4px; color: #999;">
+                    💻 Product Image
+                </div>
+                <h4>AI Integration Suite</h4>
+                <div class="price">
+                    <span class="original-price">$199.99</span>
+                    <span>$159.99</span>
+                </div>
+                <button class="cta-button">Add to Cart</button>
+            </div>
+            <div class="product">
+                <div style="width: 100%; height: 150px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; border-radius: 4px; color: #999;">
+                    🛠️ Product Image
+                </div>
+                <h4>Custom Solutions</h4>
+                <div class="price">
+                    <span class="original-price">$299.99</span>
+                    <span>$239.99</span>
+                </div>
+                <button class="cta-button">Get Quote</button>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <button class="cta-button" onclick="triggerCampaign()">🤖 Trigger AI Campaign Test</button>
+            <button class="cta-button" onclick="clearLog()">🗑️ Clear Log</button>
+        </div>
+
+        <div class="log-section">
+            <h3>📋 Campaign & Widget Activity Log</h3>
+            <div id="status" class="status info">
+                Waiting for widget to load...
+            </div>
+            <div id="log">Initializing test environment...\n</div>
+        </div>
+    </div>
+
+    <!-- Chatwoot Widget -->
+    <script>
+        (function(d,t) {
+            var BASE_URL="http://129.212.164.115:3000";
+            var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=BASE_URL+"/packs/js/sdk.js";
+            g.defer = true;
+            g.async = true;
+            s.parentNode.insertBefore(g,s);
+            g.onload=function(){
+                window.chatwootSDK.run({
+                    websiteToken: 'KaYVhBikN2MdVyZJ2Wy6drea',
+                    baseUrl: BASE_URL
+                });
+                
+                // Enhanced logging
+                window.addEventListener('chatwoot:ready', function() {
+                    log('✅ Chatwoot SDK loaded successfully');
+                    updateStatus('success', 'Widget loaded! Waiting for campaigns...');
+                    
+                    // Log widget state changes
+                    window.addEventListener('chatwoot:widget-opened', function() {
+                        log('🔓 Widget opened');
+                    });
+                    
+                    window.addEventListener('chatwoot:widget-closed', function() {
+                        log('🔒 Widget closed - campaigns should trigger now');
+                    });
+                });
+                
+                // Custom campaign detection
+                const originalFetch = window.fetch;
+                window.fetch = function(...args) {
+                    const url = args[0];
+                    if (typeof url === 'string' && url.includes('/api/v1/widget/')) {
+                        log('🌐 Widget API call: ' + url.split('/').pop());
+                    }
+                    return originalFetch.apply(this, args);
+                };
+            };
+        })(document,"script");
+        
+        // Logging functions
+        function log(message) {
+            const timestamp = new Date().toLocaleTimeString();
+            const logElement = document.getElementById('log');
+            logElement.textContent += `[${timestamp}] ${message}\n`;
+            logElement.scrollTop = logElement.scrollHeight;
+        }
+        
+        function updateStatus(type, message) {
+            const statusElement = document.getElementById('status');
+            statusElement.className = `status ${type}`;
+            statusElement.textContent = message;
+        }
+        
+        function clearLog() {
+            document.getElementById('log').textContent = 'Log cleared...\n';
+            updateStatus('info', 'Log cleared');
+        }
+        
+        function triggerCampaign() {
+            log('🎯 Manual campaign trigger requested');
+            
+            // Simulate user behavior that should trigger campaigns
+            if (window.chatwootSDK) {
+                try {
+                    // Try to trigger events that campaigns listen for
+                    window.dispatchEvent(new CustomEvent('chatwoot:trigger-campaign', {
+                        detail: { source: 'manual-test' }
+                    }));
+                    log('📡 Campaign trigger event dispatched');
+                } catch (e) {
+                    log('⚠️ Manual trigger failed: ' + e.message);
+                }
+            } else {
+                log('❌ Chatwoot SDK not loaded yet');
+            }
+        }
+        
+        // Page activity simulation
+        let pageTime = 0;
+        setInterval(() => {
+            pageTime += 1;
+            if (pageTime === 10) {
+                log('⏰ 10 seconds on page - prime time for campaigns');
+            } else if (pageTime === 30) {
+                log('⏰ 30 seconds on page - extended engagement');
+            }
+        }, 1000);
+        
+        // Mouse movement tracking
+        let mouseMovements = 0;
+        document.addEventListener('mousemove', () => {
+            mouseMovements++;
+            if (mouseMovements === 50) {
+                log('🖱️ Active user detected (mouse movement)');
+            }
+        });
+        
+        // Initial log
+        log('🚀 Test page loaded on external host');
+        log('🔍 Monitoring for AI campaigns...');
+        log('📍 Server: 129.212.164.115:3000');
+        log('🎟️ Website Token: KaYVhBikN2MdVyZJ2Wy6drea');
+    </script>
+</body>
+</html> 
