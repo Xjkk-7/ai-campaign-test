@@ -1,215 +1,376 @@
-218838;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Campaign Test Site - GitHub Pages</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
         }
-        .log-section {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 30px;
-            border: 1px solid #dee2e6;
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
-        .log-section h3 {
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            color: #333;
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 1.2em;
+            margin: 0;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card h3 {
+            color: #333;
             margin-top: 0;
-            color: #495057;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
         }
-        #log {
-            background: #000;
-            color: #00ff00;
-            padding: 10px;
-            border-radius: 4px;
-            font-family: 'Courier New', monospace;
-            font-size: 12px;
-            max-height: 300px;
-            overflow-y: auto;
-            white-space: pre-wrap;
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
         }
-        .status {
-            padding: 10px;
-            border-radius: 4px;
-            margin: 10px 0;
+        
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #27ae60;
             font-weight: bold;
         }
-        .status.success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
-        .status.error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
-        .status.info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        
+        .test-info {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #27ae60;
+            margin-right: 10px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .widget-status {
+            background: #e8f5e8;
+            border: 1px solid #27ae60;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .debug-info {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        
+        .btn {
+            background: #667eea;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s ease;
+            margin: 5px;
+        }
+        
+        .btn:hover {
+            background: #5a6fd8;
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+        }
+        
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+        
+        .footer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🚀 AI Campaign Test</h1>
-            <p>Testing AI-powered campaigns on external hosting</p>
-            <p><strong>Server:</strong> 129.212.164.115:3000</p>
+            <h1>🤖 AI Campaign Test Site</h1>
+            <p>Testing DashAssist AI Campaign Generation on GitHub Pages</p>
         </div>
-
+        
         <div class="test-info">
-            <h3>🧪 What This Tests</h3>
-            <ul>
-                <li><strong>CORS Resolution:</strong> External hosting bypasses localhost restrictions</li>
-                <li><strong>AI Campaign Delivery:</strong> Should show AI-generated campaign messages</li>
-                <li><strong>Widget Integration:</strong> Tests full widget-to-server communication</li>
-                <li><strong>Real Environment:</strong> Simulates actual production usage</li>
-            </ul>
-        </div>
-
-        <div class="sale-banner">
-            🎉 EXCLUSIVE 20% DISCOUNT SALE - LIMITED TIME! 🎉
-        </div>
-
-        <div class="products">
-            <div class="product">
-                <div style="width: 100%; height: 150px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; border-radius: 4px; color: #999;">
-                    📱 Product Image
-                </div>
-                <h4>Premium Widget Set</h4>
-                <div class="price">
-                    <span class="original-price">$99.99</span>
-                    <span>$79.99</span>
-                </div>
-                <button class="cta-button">Add to Cart</button>
+            <h3><span class="status-indicator"></span>Campaign Testing Status</h3>
+            <div class="widget-status">
+                <strong>Widget Status:</strong> <span id="widget-status">Loading...</span><br>
+                <strong>Page URL:</strong> <span id="current-url"></span><br>
+                <strong>Load Time:</strong> <span id="load-time"></span>
             </div>
-            <div class="product">
-                <div style="width: 100%; height: 150px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; border-radius: 4px; color: #999;">
-                    💻 Product Image
-                </div>
-                <h4>AI Integration Suite</h4>
-                <div class="price">
-                    <span class="original-price">$199.99</span>
-                    <span>$159.99</span>
-                </div>
-                <button class="cta-button">Add to Cart</button>
-            </div>
-            <div class="product">
-                <div style="width: 100%; height: 150px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; border-radius: 4px; color: #999;">
-                    🛠️ Product Image
-                </div>
-                <h4>Custom Solutions</h4>
-                <div class="price">
-                    <span class="original-price">$299.99</span>
-                    <span>$239.99</span>
-                </div>
-                <button class="cta-button">Get Quote</button>
+            
+            <h4>How to Test AI Campaigns:</h4>
+            <ol>
+                <li>Create a campaign in your DashAssist admin panel</li>
+                <li>Set the trigger URL to: <code>https://xjkk-7.github.io/ai-campaign-test/</code></li>
+                <li>Enable AI content generation for the campaign</li>
+                <li>Reload this page to see the campaign in action</li>
+                <li>Look for the chat widget in the bottom-right corner</li>
+            </ol>
+            
+            <div style="text-align: center; margin: 20px 0;">
+                <button class="btn" onclick="checkWidgetStatus()">🔍 Check Widget Status</button>
+                <button class="btn btn-secondary" onclick="reloadPage()">🔄 Reload Page</button>
             </div>
         </div>
-
-        <div style="text-align: center; margin: 30px 0;">
-            <button class="cta-button" onclick="triggerCampaign()">🤖 Trigger AI Campaign Test</button>
-            <button class="cta-button" onclick="clearLog()">🗑️ Clear Log</button>
-        </div>
-
-        <div class="log-section">
-            <h3>📋 Campaign & Widget Activity Log</h3>
-            <div id="status" class="status info">
-                Waiting for widget to load...
+        
+        <div class="content-grid">
+            <div class="card">
+                <h3>🎯 Campaign Features</h3>
+                <ul class="feature-list">
+                    <li>URL-based campaign triggers</li>
+                    <li>AI-generated content</li>
+                    <li>Real-time message delivery</li>
+                    <li>Context-aware responses</li>
+                    <li>Proactive messaging</li>
+                </ul>
             </div>
-            <div id="log">Initializing test environment...\n</div>
+            
+            <div class="card">
+                <h3>🔧 Technical Details</h3>
+                <ul class="feature-list">
+                    <li>GitHub Pages deployment</li>
+                    <li>Chatwoot widget integration</li>
+                    <li>DashAssist AI backend</li>
+                    <li>WebSocket connections</li>
+                    <li>Background job processing</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>📊 Test Scenarios</h3>
+                <ul class="feature-list">
+                    <li>First-time visitor campaigns</li>
+                    <li>Return visitor campaigns</li>
+                    <li>Page-specific campaigns</li>
+                    <li>Time-based campaigns</li>
+                    <li>AI context analysis</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="debug-info">
+            <h4>🔍 Debug Information</h4>
+            <div id="debug-log">
+                Initializing test environment...
+            </div>
         </div>
     </div>
+    
+    <div class="footer">
+        <p>This is a test site for DashAssist AI Campaign functionality | Deployed on GitHub Pages</p>
+    </div>
 
-    <!-- Chatwoot Widget -->
+    <!-- DashAssist/Chatwoot Widget Script -->
     <script>
-        (function(d,t) {
-            var BASE_URL="https://129.212.164.115:3000";
-            var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=BASE_URL+"/packs/js/sdk.js";
-            g.defer = true;
-            g.async = true;
-            s.parentNode.insertBefore(g,s);
-            g.onload=function(){
-                window.chatwootSDK.run({
-                    websiteToken: 'KaYVhBikN2MdVyZJ2Wy6drea',
-                    baseUrl: BASE_URL
-                });
-                
-                // Enhanced logging
-                window.addEventListener('chatwoot:ready', function() {
-                    log('✅ Chatwoot SDK loaded successfully');
-                    updateStatus('success', 'Widget loaded! Waiting for campaigns...');
-                    
-                    // Log widget state changes
-                    window.addEventListener('chatwoot:widget-opened', function() {
-                        log('🔓 Widget opened');
-                    });
-                    
-                    window.addEventListener('chatwoot:widget-closed', function() {
-                        log('🔒 Widget closed - campaigns should trigger now');
-                    });
-                });
-                
-                // Custom campaign detection
-                const originalFetch = window.fetch;
-                window.fetch = function(...args) {
-                    const url = args[0];
-                    if (typeof url === 'string' && url.includes('/api/v1/widget/')) {
-                        log('🌐 Widget API call: ' + url.split('/').pop());
-                    }
-                    return originalFetch.apply(this, args);
-                };
-            };
-        })(document,"script");
-        
-        // Logging functions
+        // Initialize debug logging
         function log(message) {
             const timestamp = new Date().toLocaleTimeString();
-            const logElement = document.getElementById('log');
-            logElement.textContent += `[${timestamp}] ${message}\n`;
-            logElement.scrollTop = logElement.scrollHeight;
+            const debugLog = document.getElementById('debug-log');
+            debugLog.innerHTML += `[${timestamp}] ${message}<br>`;
+            debugLog.scrollTop = debugLog.scrollHeight;
+            console.log(`[${timestamp}] ${message}`);
         }
         
-        function updateStatus(type, message) {
-            const statusElement = document.getElementById('status');
-            statusElement.className = `status ${type}`;
-            statusElement.textContent = message;
+        // Update status displays
+        function updateStatus(status, message) {
+            document.getElementById('widget-status').textContent = message;
+            document.getElementById('widget-status').style.color = status === 'success' ? '#27ae60' : status === 'error' ? '#e74c3c' : '#f39c12';
         }
         
-        function clearLog() {
-            document.getElementById('log').textContent = 'Log cleared...\n';
-            updateStatus('info', 'Log cleared');
-        }
+        // Display current page info
+        document.getElementById('current-url').textContent = window.location.href;
+        document.getElementById('load-time').textContent = new Date().toLocaleString();
         
-        function triggerCampaign() {
-            log('🎯 Manual campaign trigger requested');
+        log('🚀 Starting DashAssist widget initialization...');
+        log(`📍 Current URL: ${window.location.href}`);
+        log(`🌐 User Agent: ${navigator.userAgent}`);
+        
+        // Initialize Chatwoot widget
+        (function(d,t) {
+            var BASE_URL = "http://129.212.164.115:3000";
+            log(`🎯 Using base URL: ${BASE_URL}`);
             
-            // Simulate user behavior that should trigger campaigns
-            if (window.chatwootSDK) {
-                try {
-                    // Try to trigger events that campaigns listen for
-                    window.dispatchEvent(new CustomEvent('chatwoot:trigger-campaign', {
-                        detail: { source: 'manual-test' }
-                    }));
-                    log('📡 Campaign trigger event dispatched');
-                } catch (e) {
-                    log('⚠️ Manual trigger failed: ' + e.message);
+            var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            g.src = BASE_URL + "/packs/js/sdk.js";
+            g.defer = true;
+            g.async = true;
+            
+            g.onload = function() {
+                log('✅ SDK script loaded successfully');
+                
+                if (typeof window.chatwootSDK !== 'undefined') {
+                    log('✅ chatwootSDK found, initializing widget...');
+                    
+                    try {
+                        window.chatwootSDK.run({
+                            websiteToken: 'KaYVhBikN2MdVyZJ2Wy6drea',
+                            baseUrl: BASE_URL
+                        });
+                        
+                        log('🎯 Widget initialized successfully');
+                        updateStatus('success', 'Widget loaded and ready!');
+                        
+                        // Set up event listeners
+                        window.addEventListener('chatwoot:ready', function() {
+                            log('✅ Chatwoot ready event fired');
+                            updateStatus('success', 'Widget ready! Monitoring campaigns...');
+                        });
+                        
+                        window.addEventListener('chatwoot:widget-opened', function() {
+                            log('🔓 Widget opened by user');
+                        });
+                        
+                        window.addEventListener('chatwoot:widget-closed', function() {
+                            log('🔒 Widget closed - campaigns should trigger now');
+                        });
+                        
+                        window.addEventListener('chatwoot:on-message', function(e) {
+                            log(`📨 Message received: ${e.detail.message}`);
+                        });
+                        
+                        window.addEventListener('chatwoot:error', function(e) {
+                            log(`❌ Chatwoot error: ${e.detail}`);
+                            updateStatus('error', 'Widget error occurred');
+                        });
+                        
+                    } catch (error) {
+                        log(`❌ Widget initialization failed: ${error.message}`);
+                        updateStatus('error', 'Widget initialization failed');
+                    }
+                } else {
+                    log('❌ chatwootSDK not found after script load');
+                    updateStatus('error', 'Widget SDK not found');
                 }
+            };
+            
+            g.onerror = function() {
+                log(`❌ Failed to load SDK from: ${g.src}`);
+                updateStatus('error', 'Failed to load widget script');
+            };
+            
+            s.parentNode.insertBefore(g, s);
+            log('📡 Widget script tag inserted');
+            
+        })(document, "script");
+        
+        // Manual status check function
+        function checkWidgetStatus() {
+            log('🔍 Manual status check...');
+            log(`window.chatwootSDK: ${typeof window.chatwootSDK}`);
+            log(`Document ready state: ${document.readyState}`);
+            
+            if (window.chatwootSDK) {
+                log('✅ chatwootSDK is available');
+                updateStatus('success', 'Widget SDK loaded successfully');
             } else {
-                log('❌ Chatwoot SDK not loaded yet');
+                log('❌ chatwootSDK is undefined');
+                updateStatus('error', 'Widget SDK failed to load');
             }
         }
         
-        // Page activity simulation
-        let pageTime = 0;
-        setInterval(() => {
-            pageTime += 1;
-            if (pageTime === 10) {
-                log('⏰ 10 seconds on page - prime time for campaigns');
-            } else if (pageTime === 30) {
-                log('⏰ 30 seconds on page - extended engagement');
-            }
-        }, 1000);
+        // Reload page function
+        function reloadPage() {
+            log('🔄 Reloading page...');
+            location.reload();
+        }
         
-        // Mouse movement tracking
-        let mouseMovements = 0;
-        document.addEventListener('mousemove', () => {
-            mouseMovements++;
-            if (mouseMovements === 50) {
-                log('🖱️ Active user detected (mouse movement)');
+        // Initial status update
+        setTimeout(() => {
+            if (document.getElementById('widget-status').textContent === 'Loading...') {
+                updateStatus('error', 'Widget failed to load within timeout');
+                log('⏰ Widget load timeout');
             }
-        });
+        }, 10000);
         
-        // Initial log
-        log('🚀 Test page loaded on external host');
-        log('🔍 Monitoring for AI campaigns...');
-        log('📍 Server: 129.212.164.115:3000');
-        log('🎟️ Website Token: KaYVhBikN2MdVyZJ2Wy6drea');
+        log('🧪 Test website initialization complete');
     </script>
 </body>
-</html> 
+</html>
